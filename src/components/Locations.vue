@@ -31,9 +31,9 @@
             <div class="p-col-6">
                 
             </div>
-            <div class="p-col-12">
-                <label for="lastname">Lastname6</label>
-                <InputText id="lastname" type="text" />
+            <div class="p-field p-col-12"> 
+                <label for="aliase">Aliases</label>
+                <Dropdown inputId="aliase" v-model="selectedAliase" :options="aliases" optionLabel="name" placeholder="Aliases" editable />
             </div>
             <div class="p-col-12">
                 <label for="lastname">Address</label>
@@ -49,7 +49,7 @@
 export default {
     data() {
         return {
-            selectedNetowrk: null,
+            selectedNetwork: null,
             networks: [
                 {name: 'New York', code: 'NY'},
                 {name: 'Rome', code: 'RM'},
@@ -64,7 +64,15 @@ export default {
                 {name: 'London', code: 'LDN'},
                 {name: 'Istanbul', code: 'IST'},
                 {name: 'Paris', code: 'PRS'}
-            ]
+            ],
+            selectedAliases: null,
+            aliases: [
+                {name: 'New York', code: 'NY'},
+                {name: 'Rome', code: 'RM'},
+                {name: 'London', code: 'LDN'},
+                {name: 'Istanbul', code: 'IST'},
+                {name: 'Paris', code: 'PRS'}
+            ],
         }
     }
 }
