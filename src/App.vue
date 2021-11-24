@@ -1,17 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <InputText v-model="text"/>
+    <Button label="Greet" icon="pi pi-user" @click="greet"></Button>
+    <Toast />
+    {{text}}
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent, ref } from "vue";
+import { useToast } from "primevue/usetoast";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+export default defineComponent({
+  setup() {
+    const toast = useToast();
+    const text = ref('Prime');
+
+    const greet = () => {
+      toast.add({severity: 'info', summary: 'Hello', detail: text});
+    }
+
+    return {
+      text,
+      greet
+    }
   }
-}
+})
+
+/*
+export default {
+  data() {
+    return {
+      text: null
+    }
+  },
+  methods: {
+    greet() {
+      this.$toast.add({severity: 'info', summary: 'Hello', detail: this.text});
+    }
+  }
+}*/
+
 </script>
 
 <style>
