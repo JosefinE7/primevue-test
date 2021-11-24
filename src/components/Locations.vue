@@ -2,12 +2,12 @@
     <form>
         <div class="p-fluid p-formgrid p-grid">
             <div class="p-field p-col-6">
-                <label for="firstname">Firstname</label>
-                <InputText id="firstname" type="text" />
+                <label for="fullname">Full name</label>
+                <InputText id="fullname" type="text" placeholder="Full name"/>
             </div>
             <div class="p-field p-col-6">
-                <label for="lastname">Lastname</label>
-                <InputText id="lastname" type="text" />
+                <label for="owner">Owner</label>
+                <InputText id="owner" type="text" placeholder="Owner"/>
             </div>
             <div class="p-field p-col-6">
                 <label for="lastname">Lastname2</label>
@@ -18,15 +18,15 @@
                 <InputText id="lastname" type="text" />
             </div>
             <div class="p-field p-col-6">
-                <label for="state">State</label>
-                <Dropdown inputId="state" v-model="selectedState" :options="states" optionLabel="name" placeholder="Select" />
+                <label for="network">Network Functions</label>
+                <Dropdown inputId="network" v-model="selectedNetwork" :options="networks" optionLabel="name" placeholder="Select network functions" />
             </div>
             <div class="p-col-6">
                 
             </div>
             <div class="p-field p-col-6">
-                <label for="lastname">Lastname5</label>
-                <InputText id="lastname" type="text" />
+                <label for="placement">Placement</label>
+                <Dropdown inputId="placement" v-model="selectedPlacement" :options="placements" optionLabel="name" placeholder="Placement" />
             </div>
             <div class="p-col-6">
                 
@@ -49,8 +49,16 @@
 export default {
     data() {
         return {
-            selectedState: null,
-            states: [
+            selectedNetowrk: null,
+            networks: [
+                {name: 'New York', code: 'NY'},
+                {name: 'Rome', code: 'RM'},
+                {name: 'London', code: 'LDN'},
+                {name: 'Istanbul', code: 'IST'},
+                {name: 'Paris', code: 'PRS'}
+            ],
+            selectedPlacement: null,
+            placements: [
                 {name: 'New York', code: 'NY'},
                 {name: 'Rome', code: 'RM'},
                 {name: 'London', code: 'LDN'},
