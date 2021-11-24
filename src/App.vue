@@ -1,45 +1,13 @@
 <template>
-  <div>
-    <InputText v-model="text"/>
-    <Button label="Greet" icon="pi pi-user" @click="greet"></Button>
-    <Toast />
-    {{text}}
-  </div>
+  <Locations />
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-import { useToast } from "primevue/usetoast";
-
-export default defineComponent({
-  setup() {
-    const toast = useToast();
-    const text = ref('Prime');
-
-    const greet = () => {
-      toast.add({severity: 'info', summary: 'Hello', detail: text});
-    }
-
-    return {
-      text,
-      greet
-    }
-  }
-})
-
-/*
+import Locations from './components/Locations.vue'
 export default {
-  data() {
-    return {
-      text: null
-    }
-  },
-  methods: {
-    greet() {
-      this.$toast.add({severity: 'info', summary: 'Hello', detail: this.text});
-    }
-  }
-}*/
+  name: 'App',
+  components: { Locations }
+}
 
 </script>
 
@@ -51,5 +19,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  margin: 0;
+  background-color: #d1d1e0;
 }
 </style>
