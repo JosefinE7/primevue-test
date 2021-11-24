@@ -8,6 +8,7 @@ import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
 import Dropdown from 'primevue/dropdown'
 import Textarea from 'primevue/textarea'
+import CascadeSelect from 'primevue/cascadeselect';
 
 
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
@@ -23,6 +24,7 @@ app.component('InputText', InputText);
 app.component('Button', Button);
 app.component('Dropdown', Dropdown);
 app.component('Textarea', Textarea);
+app.component('CascadeSelect', CascadeSelect);
 app.component('Toast', Toast);
 
 app.mount('#app')

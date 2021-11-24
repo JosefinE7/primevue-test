@@ -10,12 +10,12 @@
                 <InputText id="owner" type="text" placeholder="Owner"/>
             </div>
             <div class="p-field p-col-6">
-                <label for="lastname">Lastname2</label>
-                <InputText id="lastname" type="text" />
+                <label for="state">Status</label>
+                <CascadeSelect v-model="selectedCity" :options="countries" optionLabel="cname" optionGroupLabel="name" 
+                        :optionGroupChildren="['states', 'cities']" style="minWidth: 14rem" />
             </div>
             <div class="p-field p-col-6">
-                <label for="lastname">Lastname3</label>
-                <InputText id="lastname" type="text" />
+                
             </div>
             <div class="p-field p-col-6">
                 <label for="network">Network Functions</label>
@@ -45,10 +45,55 @@
 </template>
 
 <script>
-
 export default {
     data() {
         return {
+            selectedCity: null,
+            countries: [
+                {
+                    name: 'Australia',
+                    code: 'AU',
+                    states: [
+                        {
+                            name: 'New South Wales',
+                            cities: [
+                                {cname: 'Sydney', code: 'A-SY'},
+                                {cname: 'Newcastle', code: 'A-NE'},
+                                {cname: 'Wollongong', code: 'A-WO'}
+                            ]
+                        },
+                        {
+                            name: 'Queensland',
+                            cities: [
+                                {cname: 'Brisbane', code: 'A-BR'},
+                                {cname: 'Townsville', code: 'A-TO'}
+                            ]
+                        },
+                        
+                    ]
+                },
+                {
+                    name: 'Canada', 
+                    code: 'CA',
+                    states: [
+                        {
+                            name: 'Quebec',
+                            cities: [
+                                {cname: 'Montreal', code: 'C-MO'},
+                                {cname: 'Quebec City', code: 'C-QU'}
+                            ]
+                        },
+                        {
+                            name: 'Ontario',
+                            cities: [
+                                {cname: 'Ottawa', code: 'C-OT'},
+                                {cname: 'Toronto', code: 'C-TO'}
+                            ]
+                        },
+                        
+                    ]
+                },
+            ],
             selectedNetwork: null,
             networks: [
                 {name: 'New York', code: 'NY'},
@@ -72,7 +117,7 @@ export default {
                 {name: 'London', code: 'LDN'},
                 {name: 'Istanbul', code: 'IST'},
                 {name: 'Paris', code: 'PRS'}
-            ],
+            ]
         }
     }
 }
