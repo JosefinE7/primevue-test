@@ -77,11 +77,10 @@ export default {
             ],
             selectedNetwork: null,
             networks: [
-                {name: 'New York', code: 'NY'},
-                {name: 'Rome', code: 'RM'},
-                {name: 'London', code: 'LDN'},
-                {name: 'Istanbul', code: 'IST'},
-                {name: 'Paris', code: 'PRS'}
+                {name: 'Switching: BNG, CG-NAT, routers'},
+                {name: 'Tunnelling gateway elements: IPSec/SSL VPN gateways'},
+                {name: 'Traffic analysis: DPI, QoE measurementI'},
+                {name: 'Signalling: SBCs, IMS'}
             ],
             selectedPlacement: null,
             placements: [
