@@ -36,8 +36,8 @@
                 <Dropdown inputId="aliase" v-model="selectedAliase" :options="aliases" optionLabel="name" placeholder="Aliases" editable />
             </div>
             <div class="p-col-12">
-                <label for="lastname">Address</label>
-                <InputText id="lastname" rows="4" type="text"/>
+                <label for="directions">Directions</label>
+                <Textarea inputId="directions" v-model="value" :autoResize="true" rows="5" cols="30" />
             </div>
         </div>
         <Button label="Submit" icon="pi pi-check" iconPos="left" />

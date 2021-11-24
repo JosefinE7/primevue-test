@@ -7,6 +7,7 @@ import InputText from 'primevue/inputtext'
 import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
 import Dropdown from 'primevue/dropdown'
+import Textarea from 'primevue/textarea'
 
 
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
@@ -21,6 +22,7 @@ app.use(ToastService);
 app.component('InputText', InputText);
 app.component('Button', Button);
 app.component('Dropdown', Dropdown);
+app.component('Textarea', Textarea);
 app.component('Toast', Toast);
 
 app.mount('#app')
