@@ -1,11 +1,22 @@
 <template>
-  <form>
-      <label>Email:</label>
-      <input type="email" required>
-  </form>
+    <form>
+        <div class="p-grid">
+            <div class="p-col-6">
+                <label for="firstname">Firstname</label>
+                <InputText id="firstname" type="text" />
+            </div>
+            <div class="p-col-6">
+                <label for="lastname">Lastname</label>
+                <InputText id="lastname" type="text" />
+            </div>
+            <div class="p-col-6">6</div>
+            <div class="p-col-6">6</div>
+        </div>
+    </form>
 </template>
 
 <script>
+
 export default {
 
 }
@@ -13,7 +24,7 @@ export default {
 
 <style>
     form {
-        max-width: 420px;
+        max-width: 720px;
         margin: 30px auto;
         background-color: #33334d;
         text-align: left;
@@ -24,12 +35,12 @@ export default {
         color: #ffe;
         display: inline-block;
         margin-bottom: 5px;
-        font-size: 1em;
+        font-size: 1.2em;
         letter-spacing: 1px;
         
     }
     input {
-        display: block;
+        /* display: block; */
         padding: 10px 6px;
         width: 100%;
         box-sizing: border-box;
