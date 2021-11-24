@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form @submit.prevent="handleSubmit(!v$.$invalid)">
         <div class="p-fluid p-formgrid p-grid">
             <div class="p-field p-col-6">
                 <label for="fullname">Full name</label>
@@ -19,32 +19,38 @@
             </div>
             <div class="p-field p-col-6">
                 <label for="network">Network Functions</label>
-                <Dropdown inputId="network" v-model="selectedNetwork" :options="networks" optionLabel="name" placeholder="Select network functions" required/>
+                <Dropdown inputId="network" v-model="selectedNetwork" :options="networks" optionLabel="name" 
+                        placeholder="Select network functions" />
             </div>
             <div class="p-col-6">
                 
             </div>
             <div class="p-field p-col-6">
                 <label for="placement">Placement</label>
-                <Dropdown inputId="placement" v-model="selectedPlacement" :options="placements" optionLabel="name" placeholder="Placement" required/>
+                <Dropdown inputId="placement" v-model="selectedPlacement" :options="placements" optionLabel="name" 
+                        placeholder="Placement" required/>
             </div>
             <div class="p-col-6">
                 
             </div>
             <div class="p-field p-col-12"> 
                 <label for="aliase">Aliases</label>
-                <Dropdown inputId="aliase" v-model="selectedAliase" :options="aliases" optionLabel="name" placeholder="Aliases" editable required />
+                <Dropdown inputId="aliase" v-model="selectedAliase" :options="aliases" optionLabel="name" 
+                        placeholder="Aliases" editable required />
             </div>
             <div class="p-col-12">
                 <label for="directions">Directions</label>
                 <Textarea inputId="directions" v-model="value" :autoResize="true" rows="5" cols="30" required />
             </div>
         </div>
-        <Button label="Submit" icon="pi pi-check" iconPos="left" />
+        <Button label="Submit" type="submit" icon="pi pi-check" iconPos="left" @click="submit" />
+        <Toast />
     </form>
 </template>
 
 <script>
+
+
 export default {
     data() {
         return {
@@ -93,6 +99,11 @@ export default {
                 {name: 'Istanbul', code: 'IST'},
                 {name: 'Paris', code: 'PRS'}
             ]
+        }
+    },
+    methods: {
+        submit() {
+            this.$toast.add({severity: 'success', summary: 'Location successfully created'});
         }
     }
 }
