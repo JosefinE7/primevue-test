@@ -65,7 +65,7 @@ export default {
                 {name: 'Istanbul', code: 'IST'},
                 {name: 'Paris', code: 'PRS'}
             ],
-            selectedAliases: null,
+            selectedAliase: null,
             aliases: [
                 {name: 'New York', code: 'NY'},
                 {name: 'Rome', code: 'RM'},
