@@ -3,41 +3,41 @@
         <div class="p-fluid p-formgrid p-grid">
             <div class="p-field p-col-6">
                 <label for="fullname">Full name</label>
-                <InputText id="fullname" type="text" placeholder="Full name"/>
+                <InputText id="fullname" type="text" placeholder="Full name" required/>
             </div>
             <div class="p-field p-col-6">
                 <label for="owner">Owner</label>
-                <InputText id="owner" type="text" placeholder="Owner"/>
+                <InputText id="owner" type="text" placeholder="Owner" required/>
             </div>
             <div class="p-field p-col-6">
                 <label for="state">Status</label>
-                <CascadeSelect v-model="selectedCity" :options="countries" optionLabel="cname" optionGroupLabel="name" 
-                        :optionGroupChildren="['states', 'cities']" style="minWidth: 14rem" />
+                <CascadeSelect v-model="selectedState" :options="status" optionLabel="cname" optionGroupLabel="name" 
+                        :optionGroupChildren="['substatus']" style="minWidth: 14rem" placeholder="Status" required/>
             </div>
             <div class="p-field p-col-6">
                 
             </div>
             <div class="p-field p-col-6">
                 <label for="network">Network Functions</label>
-                <Dropdown inputId="network" v-model="selectedNetwork" :options="networks" optionLabel="name" placeholder="Select network functions" />
+                <Dropdown inputId="network" v-model="selectedNetwork" :options="networks" optionLabel="name" placeholder="Select network functions" required/>
             </div>
             <div class="p-col-6">
                 
             </div>
             <div class="p-field p-col-6">
                 <label for="placement">Placement</label>
-                <Dropdown inputId="placement" v-model="selectedPlacement" :options="placements" optionLabel="name" placeholder="Placement" />
+                <Dropdown inputId="placement" v-model="selectedPlacement" :options="placements" optionLabel="name" placeholder="Placement" required/>
             </div>
             <div class="p-col-6">
                 
             </div>
             <div class="p-field p-col-12"> 
                 <label for="aliase">Aliases</label>
-                <Dropdown inputId="aliase" v-model="selectedAliase" :options="aliases" optionLabel="name" placeholder="Aliases" editable />
+                <Dropdown inputId="aliase" v-model="selectedAliase" :options="aliases" optionLabel="name" placeholder="Aliases" editable required />
             </div>
             <div class="p-col-12">
                 <label for="directions">Directions</label>
-                <Textarea inputId="directions" v-model="value" :autoResize="true" rows="5" cols="30" />
+                <Textarea inputId="directions" v-model="value" :autoResize="true" rows="5" cols="30" required />
             </div>
         </div>
         <Button label="Submit" icon="pi pi-check" iconPos="left" />
@@ -48,49 +48,24 @@
 export default {
     data() {
         return {
-            selectedCity: null,
-            countries: [
+            selectedState: null,
+            status: [
                 {
-                    name: 'Australia',
-                    code: 'AU',
-                    states: [
-                        {
-                            name: 'New South Wales',
-                            cities: [
-                                {cname: 'Sydney', code: 'A-SY'},
-                                {cname: 'Newcastle', code: 'A-NE'},
-                                {cname: 'Wollongong', code: 'A-WO'}
-                            ]
-                        },
-                        {
-                            name: 'Queensland',
-                            cities: [
-                                {cname: 'Brisbane', code: 'A-BR'},
-                                {cname: 'Townsville', code: 'A-TO'}
-                            ]
-                        },
-                        
+                    name: 'Constructed',
+                    substatus: [
+                        {cname: 'Constructed'},
+                        {cname: 'Frozen'},
+                        {cname: 'Planned for Termination'},
+                        {cname: 'Termination Ordered'}
                     ]
                 },
                 {
-                    name: 'Canada', 
-                    code: 'CA',
-                    states: [
-                        {
-                            name: 'Quebec',
-                            cities: [
-                                {cname: 'Montreal', code: 'C-MO'},
-                                {cname: 'Quebec City', code: 'C-QU'}
-                            ]
-                        },
-                        {
-                            name: 'Ontario',
-                            cities: [
-                                {cname: 'Ottawa', code: 'C-OT'},
-                                {cname: 'Toronto', code: 'C-TO'}
-                            ]
-                        },
-                        
+                    name: 'Initiated',
+                    substatus: [
+                        {cname: 'Initiated'},
+                        {cname: 'Accepted'},
+                        {cname: 'Rejected'},
+                        {cname: 'Cancelled'}
                     ]
                 },
             ],
