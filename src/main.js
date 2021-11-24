@@ -6,6 +6,8 @@ import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
 import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
+import Dropdown from 'primevue/dropdown'
+
 
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
@@ -18,6 +20,7 @@ app.use(ToastService);
 
 app.component('InputText', InputText);
 app.component('Button', Button);
+app.component('Dropdown', Dropdown);
 app.component('Toast', Toast);
 
 app.mount('#app')

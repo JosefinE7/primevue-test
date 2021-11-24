@@ -1,24 +1,64 @@
 <template>
     <form>
-        <div class="p-grid">
-            <div class="p-col-6">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col-6">
                 <label for="firstname">Firstname</label>
                 <InputText id="firstname" type="text" />
             </div>
-            <div class="p-col-6">
+            <div class="p-field p-col-6">
                 <label for="lastname">Lastname</label>
                 <InputText id="lastname" type="text" />
             </div>
-            <div class="p-col-6">6</div>
-            <div class="p-col-6">6</div>
+            <div class="p-field p-col-6">
+                <label for="lastname">Lastname2</label>
+                <InputText id="lastname" type="text" />
+            </div>
+            <div class="p-field p-col-6">
+                <label for="lastname">Lastname3</label>
+                <InputText id="lastname" type="text" />
+            </div>
+            <div class="p-field p-col-6">
+                <label for="state">State</label>
+                <Dropdown inputId="state" v-model="selectedState" :options="states" optionLabel="name" placeholder="Select" />
+            </div>
+            <div class="p-col-6">
+                
+            </div>
+            <div class="p-field p-col-6">
+                <label for="lastname">Lastname5</label>
+                <InputText id="lastname" type="text" />
+            </div>
+            <div class="p-col-6">
+                
+            </div>
+            <div class="p-col-12">
+                <label for="lastname">Lastname6</label>
+                <InputText id="lastname" type="text" />
+            </div>
+            <div class="p-col-12">
+                <label for="lastname">Address</label>
+                <InputText id="lastname" rows="4" type="text"/>
+            </div>
         </div>
+        <Button label="Submit" icon="pi pi-check" iconPos="left" />
     </form>
 </template>
 
 <script>
 
 export default {
-
+    data() {
+        return {
+            selectedState: null,
+            states: [
+                {name: 'New York', code: 'NY'},
+                {name: 'Rome', code: 'RM'},
+                {name: 'London', code: 'LDN'},
+                {name: 'Istanbul', code: 'IST'},
+                {name: 'Paris', code: 'PRS'}
+            ]
+        }
+    }
 }
 </script>
 
