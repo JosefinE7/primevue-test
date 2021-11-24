@@ -113,7 +113,7 @@ export default {
     form {
         max-width: 720px;
         margin: 30px auto;
-        background-color: #33334d;
+        background-color: #0e2f44;
         text-align: left;
         padding: 40px;
         border-radius: 10px;
