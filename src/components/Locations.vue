@@ -91,11 +91,11 @@ export default {
             ],
             selectedAliase: null,
             aliases: [
-                {name: 'New York', code: 'NY'},
-                {name: 'Rome', code: 'RM'},
-                {name: 'London', code: 'LDN'},
-                {name: 'Istanbul', code: 'IST'},
-                {name: 'Paris', code: 'PRS'}
+                {name: 'AA77'},
+                {name: 'AB35'},
+                {name: 'CB56'},
+                {name: 'LL89'},
+                {name: 'TT78'}
             ]
         }
     },
