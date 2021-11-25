@@ -43,8 +43,10 @@
                 <Textarea inputId="directions" v-model="value" :autoResize="true" rows="5" cols="30" required />
             </div>
         </div>
-        <Button label="Create" type="submit" icon="pi pi-check" iconPos="left" @click="submit" />
-        <Toast />
+        <div class="p-d-flex p-jc-end">
+            <Button label="Create" type="submit" icon="pi pi-check" iconPos="left" @click="submit" />
+            <Toast />
+        </div>
     </form>
 </template>
 
